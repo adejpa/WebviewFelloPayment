@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost/be-dummy/api";    // API Dummy
+const baseUrl = "https://bvnisora.com/be-dummy/api";    // API Dummy
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("id");
 

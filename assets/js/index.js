@@ -1,5 +1,5 @@
 const userId = 1;     // User ID Dummy
-const baseUrl = "http://localhost/be-dummy/api";    // API Dummy
+const baseUrl = "https://bvnisora.com/be-dummy/api";    // API Dummy
 
 $(document).ready(function() {
   const dataLength = sessionStorage.getItem("dataLength");

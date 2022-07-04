@@ -1,6 +1,8 @@
 const baseUrl = "https://bvnisora.com/be-dummy/api";    // API Dummy
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("id");
+const dataLength = sessionStorage.getItem("dataLength");
+const vendorsLength = sessionStorage.getItem("vendorsLength");
 
 const getData = () => {
   if (id) {
@@ -26,6 +28,8 @@ const deleteData = () => {
       .then(response => response.json())
       .then(res => {
         if (res.status) {
+          setDataStorage("dataLength", parseInt(dataLength) - 1);
+          setDataStorage("vendorsLength", parseInt(vendorsLength) + 1);
           window.location.href = "index.html";
         } else {
           alert("Error");
@@ -62,4 +66,8 @@ const changeContent = (data) => {
   infoName.innerHTML = data.name;
   infoNumber.innerHTML = data.phone;
   infoIdDelete.setAttribute("data-id", data.payment_id);
+}
+
+const setDataStorage = (key, value) => {
+  sessionStorage.setItem(key, value);
 }

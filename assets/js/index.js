@@ -26,7 +26,11 @@ $(document).ready(function() {
       "balance": formatRupiah(ranBalance)
     };
 
-    showSkeleton({ status: true });
+    showSkeleton({
+      status: true,
+      dataLength: dataLength,
+      vendorsLength: vendorsLength
+    });
 
     $.ajax({
       type: "POST",
@@ -37,7 +41,9 @@ $(document).ready(function() {
       cache: false,
       success: function (res) {
         if (res.status) {
-          window.location.reload();
+          setDataStorage("dataLength", parseInt(dataLength) + 1);
+          setDataStorage("vendorsLength", parseInt(vendorsLength) - 1);
+          window.location.href = "index.html";
         } else {
           showSkeleton({ status: false });
         }

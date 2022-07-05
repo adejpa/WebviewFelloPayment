@@ -105,7 +105,7 @@ const vendorTpl = (data) => {
         </div>
         <div class="text-item flex-fill d-flex flex-column justify-content-center">
           <span class="title-item">${data.name}</span>
-          <span class="desc-item text-dark">Hubungkan akun</span>
+          <span class="desc-item">Hubungkan akun</span>
         </div>
         <div class="arrow-item d-flex align-items-center">
           <img src="assets/img/ic-chevron-right@2x.png" class="chevron-right" alt="chevron-right" />
